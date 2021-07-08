@@ -6,7 +6,7 @@ class Bot(AbstractPlayer):
 
     def __init__(self, position):
         super().__init__(position)
-        self.max_point = random.randint(17, 20)
+        self.max_points = random.randint(17, 20)
 
     def change_bet(self, max_bet, min_bet):
         self.bet = random.randint(min_bet, max_bet)

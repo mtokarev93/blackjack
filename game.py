@@ -58,14 +58,14 @@ class Game:
             for _ in range(2):
                 # card = self.deck.get_card()
                 # player.take_card(card)
-                self.deck.move_last_card(player, 2)
+                self.deck.move_last_card(player)
                 # player.move_last_cards(table, len(player.cards))
                 # table.move_last_cards(player)
         card = self.deck.get_card()
 
 # метод проверяющий раздачу на 21 и останавливающий игру
     def check_stop(self, player):
-        points = player.fuull_points
+        points = player.full_points
         if points >= 21:
             player.print_cards()
             return True
@@ -84,7 +84,7 @@ class Game:
     #спрашиваем карты в игре
     def ask_cards(self):
         for player in self.players:  # проходим по игрокам
-            while player.ask.card():
+            while player.ask_card(self.deck):
                 card = self.deck.get_card()
                 player.take_card(card)
 

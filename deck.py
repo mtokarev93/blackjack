@@ -7,13 +7,14 @@ from random import shuffle
 
 class Deck(CardCollection):
     def __init__(self, cards=None):
-        # self.cards = self._generate_deck()
         super().__init__(cards)
+        if cards is None:
+            self.cards = self._generate_cards()
         shuffle(self.cards) # тасование колоды
 
-#метод генерации колоды
+# метод генерации колоды
     @staticmethod
-    def generate_cards():
+    def _generate_cards():
         cards = []
         for suit, rank in product(SUITS, RANKS):
             if rank == 'Ace':
@@ -26,7 +27,7 @@ class Deck(CardCollection):
             cards.append(c) # добавление её в массив всех карт
         return cards
     
- # метод который достаёт карту из колоды
+# метод который достаёт карту из колоды
     def get_card(self):
         return self.cards.pop()
     
