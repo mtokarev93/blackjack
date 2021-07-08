@@ -1,0 +1,42 @@
+08.06.2021
+
+1. input print не должны находиться в бизнес-логике
+
+class Game:
+    def ask_cards()
+
+
+game.ask_cards() <- input()
+
+for player in players:
+    ask = input() # y / n
+    ask = 'y'
+    ask = speech_recognition.recognize(micro())
+
+    game.do_step(player, ask)
+
+game.print_winners() => print
+
+=> winners = game.get_winners() => {'player1', 'player2'}
+speech.play_sound(winners)
+
+2. get_card только получает карту
+    откуда.move_card(куда, сколько_карт)
+
+3. self работает только внутри класса
+
+4. start_game везде заменить на start
+
+    # class Car:
+    #     def __init__(self):
+    #         micha_car.opened = False
+    #         micha_car.opened = False
+            
+    #     def open(self):
+    #         micha_car.opened = True 
+            
+    # micha_car = Car() => {opened: True}
+    # igor_car = Car() => {opened: False}
+    
+    # micha_car.open()
+    # igor_car.open()
